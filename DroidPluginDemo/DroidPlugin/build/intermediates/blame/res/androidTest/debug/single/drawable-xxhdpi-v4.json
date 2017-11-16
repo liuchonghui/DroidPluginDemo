@@ -1,0 +1,26 @@
+[
+    {
+        "merged": "/home/fuchao/AndroidStudioProjects/DroidPluginTest/DroidPlugin/build/intermediates/res/merged/androidTest/debug/drawable-xxhdpi-v4/plugin_activity_loading_bitmap.9.png",
+        "source": "/home/fuchao/AndroidStudioProjects/DroidPluginTest/DroidPlugin/build/intermediates/bundles/debug/res/drawable-xxhdpi-v4/plugin_activity_loading_bitmap.9.png"
+    },
+    {
+        "merged": "/home/fuchao/AndroidStudioProjects/DroidPluginTest/DroidPlugin/build/intermediates/res/merged/androidTest/debug/drawable-xxhdpi-v4/plugin_activity_loading.xml",
+        "source": "/home/fuchao/AndroidStudioProjects/DroidPluginTest/DroidPlugin/build/intermediates/bundles/debug/res/drawable-xxhdpi-v4/plugin_activity_loading.xml"
+    },
+    {
+        "merged": "/Users/liuchonghui/git_project/DroidPluginDemo/DroidPluginDemo/DroidPlugin/build/intermediates/res/merged/androidTest/debug/drawable-xxhdpi-v4/plugin_activity_loading_bitmap.9.png",
+        "source": "/Users/liuchonghui/git_project/DroidPluginDemo/DroidPluginDemo/DroidPlugin/build/intermediates/bundles/debug/res/drawable-xxhdpi-v4/plugin_activity_loading_bitmap.9.png"
+    },
+    {
+        "merged": "/Users/liuchonghui/git_project/DroidPluginTest/DroidPlugin/build/intermediates/res/merged/androidTest/debug/drawable-xxhdpi-v4/plugin_activity_loading.xml",
+        "source": "/Users/liuchonghui/git_project/DroidPluginTest/DroidPlugin/build/intermediates/bundles/debug/res/drawable-xxhdpi-v4/plugin_activity_loading.xml"
+    },
+    {
+        "merged": "/Users/liuchonghui/git_project/DroidPluginTest/DroidPlugin/build/intermediates/res/merged/androidTest/debug/drawable-xxhdpi-v4/plugin_activity_loading_bitmap.9.png",
+        "source": "/Users/liuchonghui/git_project/DroidPluginTest/DroidPlugin/build/intermediates/bundles/debug/res/drawable-xxhdpi-v4/plugin_activity_loading_bitmap.9.png"
+    },
+    {
+        "merged": "/Users/liuchonghui/git_project/DroidPluginDemo/DroidPluginDemo/DroidPlugin/build/intermediates/res/merged/androidTest/debug/drawable-xxhdpi-v4/plugin_activity_loading.xml",
+        "source": "/Users/liuchonghui/git_project/DroidPluginDemo/DroidPluginDemo/DroidPlugin/build/intermediates/bundles/debug/res/drawable-xxhdpi-v4/plugin_activity_loading.xml"
+    }
+]
