@@ -52,7 +52,7 @@ public class Log {
     private static final long MAX_LOG_FILE = 1024 * 1024 * 8; //8MB
 
     private static boolean sDebug = true;
-    private static boolean sFileLog = true;
+    private static boolean sFileLog = false;
     private static final SimpleDateFormat sFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS");
     private static final SimpleDateFormat sFormat1 = new SimpleDateFormat("yyyyMMdd");
 
@@ -62,8 +62,7 @@ public class Log {
     private static final File sDir = new File(Environment.getExternalStorageDirectory(), "360Log/Plugin/");
 
     static {
-        //sFileLog = sDir.exists() && sDir.isDirectory();
-        //sDebug = sFileLog;
+        sFileLog = sDir.exists() && sDir.isDirectory();
     }
 
     public static boolean isDebug() {

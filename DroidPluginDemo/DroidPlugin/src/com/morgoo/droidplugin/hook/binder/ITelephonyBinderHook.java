@@ -19,30 +19,31 @@
 ** License along with DroidPlugin.  If not, see <http://www.gnu.org/licenses/lgpl.txt>
 **
 **/
-
 package com.morgoo.droidplugin.hook.binder;
 
 import android.content.Context;
 import android.os.IBinder;
+
 import com.morgoo.droidplugin.hook.BaseHookHandle;
-import com.morgoo.droidplugin.hook.handle.IMountServiceHookHandle;
-import com.morgoo.helper.compat.IMountServiceCompat;
+import com.morgoo.droidplugin.hook.handle.ITelephonyHookHandle;
+import com.morgoo.helper.compat.ITelephonyCompat;
 
 /**
- * Created by Andy Zhang(zhangyong232@gmail.com) on 2015/3/6.
+ * Created by Andy Zhang(zhangyong232@gmail.com) on 2016/5/6.
  */
-public class IMountServiceBinder extends BinderHook {
+public class ITelephonyBinderHook extends BinderHook {
 
-    private final static String SERVICE_NAME = "mount";
-
-    public IMountServiceBinder(Context hostContext) {
+    public ITelephonyBinderHook(Context hostContext) {
         super(hostContext);
     }
 
+
+    private final static String SERVICE_NAME = Context.TELEPHONY_SERVICE;
+
     @Override
-    public Object getOldObj() throws Exception{
+    Object getOldObj() throws Exception {
         IBinder iBinder = MyServiceManager.getOriginService(SERVICE_NAME);
-        return IMountServiceCompat.asInterface(iBinder);
+        return ITelephonyCompat.asInterface(iBinder);
     }
 
     @Override
@@ -52,7 +53,6 @@ public class IMountServiceBinder extends BinderHook {
 
     @Override
     protected BaseHookHandle createHookHandle() {
-        return new IMountServiceHookHandle(mHostContext);
+        return new ITelephonyHookHandle(mHostContext);
     }
-
 }

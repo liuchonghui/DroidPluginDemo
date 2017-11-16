@@ -111,7 +111,7 @@ public class PluginProcessManager {
             sProcessList.add(context.getPackageName());
 
             PackageManager pm = context.getPackageManager();
-            PackageInfo packageInfo = pm.getPackageInfo(context.getPackageName(), PackageManager.GET_RECEIVERS | PackageManager.GET_ACTIVITIES | PackageManager.GET_PROVIDERS);
+            PackageInfo packageInfo = pm.getPackageInfo(context.getPackageName(), PackageManager.GET_RECEIVERS | PackageManager.GET_ACTIVITIES | PackageManager.GET_PROVIDERS | PackageManager.GET_SERVICES);
             if (packageInfo.receivers != null) {
                 for (ActivityInfo info : packageInfo.receivers) {
                     if (!sProcessList.contains(info.processName)) {
@@ -206,12 +206,12 @@ public class PluginProcessManager {
                     if (apk != null) {
                         ClassLoader classloader = null;
                         try {
-                            classloader = new PluginClassLoader(apk, optimizedDirectory, libraryPath, ClassLoader.getSystemClassLoader());
+                            classloader = new PluginClassLoader(apk, optimizedDirectory, libraryPath, hostContext.getClassLoader().getParent());
                         } catch (Exception e) {
                         }
                         if(classloader==null){
                             PluginDirHelper.cleanOptimizedDirectory(optimizedDirectory);
-                            classloader = new PluginClassLoader(apk, optimizedDirectory, libraryPath, ClassLoader.getSystemClassLoader());
+                            classloader = new PluginClassLoader(apk, optimizedDirectory, libraryPath, hostContext.getClassLoader().getParent());
                         }
                         synchronized (loadedApk) {
                             FieldUtils.writeDeclaredField(loadedApk, "mClassLoader", classloader);
@@ -397,7 +397,7 @@ public class PluginProcessManager {
             try {
                 SYSTEM_SERVICE_MAP = FieldUtils.readStaticField(baseContext.getClass(), "SYSTEM_SERVICE_MAP");
             } catch (Exception e) {
-                Log.e(TAG, "readStaticField(SYSTEM_SERVICE_MAP) from %s fail", e, baseContext.getClass());
+                Log.w(TAG, "readStaticField(SYSTEM_SERVICE_MAP) from %s fail", e, baseContext.getClass());
             }
             if (SYSTEM_SERVICE_MAP == null) {
                 try {
