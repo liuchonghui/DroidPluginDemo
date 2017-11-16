@@ -2,7 +2,6 @@ package com.host;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.RemoteException;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
@@ -44,10 +43,10 @@ public class MainActivity extends AppCompatActivity {
         else {
             try {
                 PluginManager.getInstance().installPackage(plugins[0].getAbsolutePath(), PackageManagerCompat.INSTALL_REPLACE_EXISTING);
-            } catch (RemoteException e) {
+                tvTest.setText(plugins[0].getAbsolutePath());
+            } catch (Exception e) {
                 e.printStackTrace();
             }
-            tvTest.setText(plugins[0].getAbsolutePath());
         }
     }
 

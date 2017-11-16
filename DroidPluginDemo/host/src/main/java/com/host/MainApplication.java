@@ -1,14 +1,14 @@
 package com.host;
 
+import android.app.Application;
 import android.content.Context;
 
-import com.morgoo.droidplugin.PluginApplication;
 import com.morgoo.droidplugin.PluginHelper;
 
 /**
  * Created by liuchonghui on 2017/11/15.
  */
-public class MainApplication extends PluginApplication {
+public class MainApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
